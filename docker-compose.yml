@@ -1,0 +1,13 @@
+services:
+  sim:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    image: so-arm-101:prod
+    ports:
+      - "${STUDIO_PORT:-8080}:8080"
+    environment:
+      MUJOCO_GL: osmesa
+      STUDIO_PORT: "8080"
+    restart: unless-stopped

@@ -6,7 +6,7 @@
     "pass_rate": 1.0,
     "task_success_count": 8,
     "avg_sim_time_s": 5.654,
-    "avg_wall_time_s": 0.126,
+    "avg_wall_time_s": 0.14,
     "failure_breakdown": {
       "grasp_slip": 2,
       "obstacle_collision": 1,
@@ -20,7 +20,7 @@
       "passed": true,
       "task_succeeded": true,
       "sim_time_s": 6.999999999999451,
-      "wall_time_s": 0.1741723750019446,
+      "wall_time_s": 0.24146091700004035,
       "failure_reason": null,
       "details": {
         "cube_pos": [
@@ -49,7 +49,7 @@
       "passed": true,
       "task_succeeded": true,
       "sim_time_s": 6.999999999999451,
-      "wall_time_s": 0.1170839159967727,
+      "wall_time_s": 0.14408708400003434,
       "failure_reason": null,
       "details": {
         "cube_pos": [
@@ -78,7 +78,7 @@
       "passed": true,
       "task_succeeded": true,
       "sim_time_s": 6.999999999999451,
-      "wall_time_s": 0.12641391600482166,
+      "wall_time_s": 0.13790612499997223,
       "failure_reason": null,
       "details": {
         "cube_pos": [
@@ -107,7 +107,7 @@
       "passed": true,
       "task_succeeded": true,
       "sim_time_s": 6.999999999999451,
-      "wall_time_s": 0.11944462500105146,
+      "wall_time_s": 0.12755300000003444,
       "failure_reason": null,
       "details": {
         "cube_pos": [
@@ -136,7 +136,7 @@
       "passed": true,
       "task_succeeded": true,
       "sim_time_s": 6.999999999999451,
-      "wall_time_s": 0.1117952500062529,
+      "wall_time_s": 0.11900404200002868,
       "failure_reason": null,
       "details": {
         "cube_pos": [
@@ -165,7 +165,7 @@
       "passed": true,
       "task_succeeded": true,
       "sim_time_s": 6.999999999999451,
-      "wall_time_s": 0.11512929099990288,
+      "wall_time_s": 0.13189966699997058,
       "failure_reason": null,
       "details": {
         "task_succeeded": true,
@@ -189,7 +189,7 @@
       "passed": true,
       "task_succeeded": false,
       "sim_time_s": 3.09999999999988,
-      "wall_time_s": 0.07104466699820478,
+      "wall_time_s": 0.07983983400004036,
       "failure_reason": "grasp_slip",
       "details": {
         "task_succeeded": false,
@@ -213,7 +213,7 @@
       "passed": true,
       "task_succeeded": false,
       "sim_time_s": 3.09999999999988,
-      "wall_time_s": 0.06016424999688752,
+      "wall_time_s": 0.06923733400003584,
       "failure_reason": "grasp_slip",
       "details": {
         "task_succeeded": false,
@@ -237,7 +237,7 @@
       "passed": true,
       "task_succeeded": true,
       "sim_time_s": 6.999999999999451,
-      "wall_time_s": 0.22935287499421975,
+      "wall_time_s": 0.23582745800001703,
       "failure_reason": null,
       "details": {
         "task_succeeded": true,
@@ -261,7 +261,7 @@
       "passed": true,
       "task_succeeded": false,
       "sim_time_s": 6.999999999999451,
-      "wall_time_s": 0.15487874999962514,
+      "wall_time_s": 0.15998608300003525,
       "failure_reason": "obstacle_collision",
       "details": {
         "task_succeeded": false,
@@ -285,7 +285,7 @@
       "passed": true,
       "task_succeeded": false,
       "sim_time_s": 0.0,
-      "wall_time_s": 0.09084516599978087,
+      "wall_time_s": 0.0868401669999912,
       "failure_reason": "out_of_reach",
       "details": {
         "target": [
@@ -302,7 +302,7 @@
       "passed": true,
       "task_succeeded": false,
       "sim_time_s": 0.0,
-      "wall_time_s": 0.08518070800346322,
+      "wall_time_s": 0.09043466600007832,
       "failure_reason": "out_of_reach",
       "details": {
         "target": [
@@ -319,7 +319,7 @@
       "passed": true,
       "task_succeeded": true,
       "sim_time_s": 11.300000000000443,
-      "wall_time_s": 0.177813457994489,
+      "wall_time_s": 0.192022374999965,
       "failure_reason": null,
       "details": {
         "task_succeeded": true,

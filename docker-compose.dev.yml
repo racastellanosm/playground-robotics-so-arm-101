@@ -1,0 +1,13 @@
+services:
+  sim:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+    image: so-arm-101:dev
+    entrypoint: []
+    environment:
+      STUDIO_HOT_RELOAD: all
+    volumes:
+      - ./:/app
+    restart: "no"
