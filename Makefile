@@ -2,7 +2,7 @@
 # Makefile — SO-ARM101 MuJoCo Simulation (Zero Host Dependencies)
 # ==============================================================================
 .DEFAULT_GOAL := help
-.PHONY: help build install tests test verify run dev start stop logs shell clean
+.PHONY: help build install tests verify start stop logs shell clean
 
 DOCKER      ?= $(shell command -v docker 2>/dev/null || echo /Applications/Docker.app/Contents/Resources/bin/docker)
 COMPOSE     := $(DOCKER) compose -f docker-compose.yml
@@ -34,15 +34,8 @@ tests: ## Runs the MuJoCo simulation test suite and base verification
 	$(DOCKER_RUN) python tests/sim_suite.py --seed $(SEED) --trials $(TRIALS) --json-out $(JSON_OUT)
 	$(DOCKER_RUN) python pick_and_place_verify.py
 
-test: tests ## Alias for 'tests'
-
 verify: ## Runs base pick-and-place verification and renders 2x2 summary
 	$(DOCKER_RUN) python pick_and_place_verify.py
-
-run: ## Starts MuJoCo Studio WebViewer server in the foreground
-	STUDIO_PORT=$(STUDIO_PORT) $(COMPOSE_DEV) up
-
-dev: run ## Alias for 'run'
 
 start: ## Starts MuJoCo Studio WebViewer server in the background
 	STUDIO_PORT=$(STUDIO_PORT) $(COMPOSE_DEV) up -d

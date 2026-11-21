@@ -11,7 +11,7 @@ This repository strictly follows the **Zero Host Dependencies** philosophy.
    - Build images: `make build`
    - Run all simulation tests and base verification: `make tests` (supports `SEED=42`, `TRIALS=5`, `JSON_OUT=tests/sim_suite_report.json`)
    - Run base verification and renders only: `make verify`
-   - Start MuJoCo Studio WebViewer: `make start` (detached) or `make run` (foreground)
+   - Start MuJoCo Studio WebViewer: `make start` (detached)
    - Inspect logs: `make logs`
    - Stop services: `make stop`
    - Full cleanup: `make clean`

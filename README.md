@@ -42,8 +42,8 @@ make build
 # Run the simulation test suite and base verification with renders
 make tests
 
-# Start the MuJoCo Studio WebViewer server (http://localhost:8080)
-make run
+# Start the MuJoCo Studio WebViewer server in the background (http://localhost:8080)
+make start
 ```
 
 ### Available Targets
@@ -53,10 +53,9 @@ make run
 | `make help` | Displays the self-documented help menu |
 | `make build` | Builds `so-arm-101:dev` and `so-arm-101:prod` Docker images |
 | `make install` | Builds the development container with all dependencies |
-| `make tests` / `make test` | Runs `tests/sim_suite.py` and `pick_and_place_verify.py` in an ephemeral container |
+| `make tests` | Runs `tests/sim_suite.py` and `pick_and_place_verify.py` in an ephemeral container |
 | `make verify` | Runs `pick_and_place_verify.py` and generates renders in `renders/` |
-| `make run` / `make dev` | Starts the MuJoCo Studio WebViewer server in the foreground (`STUDIO_PORT=8080`) |
-| `make start` | Starts the WebViewer server in the background (`-d`) |
+| `make start` | Starts the WebViewer server in the background (`STUDIO_PORT=8080`) |
 | `make stop` | Stops background containers |
 | `make logs` | Streams live logs from the `sim` container |
 | `make shell` | Opens an interactive `bash` shell inside the container |
