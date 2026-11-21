@@ -135,6 +135,12 @@ def _add_environment_assets(spec: mujoco.MjSpec) -> None:
       roughness=0.55,
       metallic=0.0,
   )
+  spec.add_material(
+      name="obstacle_material",
+      rgba=[0.92, 0.52, 0.14, 1.0],
+      roughness=0.50,
+      metallic=0.0,
+  )
 
   world = spec.worldbody
   world.add_light(
@@ -234,7 +240,11 @@ def _add_table(
     )
 
 
-def _attach_so101_robot(spec: mujoco.MjSpec) -> None:
+def _attach_so101_robot(
+    spec: mujoco.MjSpec,
+    *,
+    gripper_friction: tuple[float, float, float] = (1.2, 0.02, 0.005),
+) -> None:
   """Attaches the Menagerie SO-101 arm onto the table and configures grasp pads."""
   robot_spec = mujoco.MjSpec.from_file(str(SO101_XML_PATH))
   robot_spec.option.timestep = spec.option.timestep
@@ -263,7 +273,7 @@ def _attach_so101_robot(spec: mujoco.MjSpec) -> None:
         "collision_gripper_mesh",
     ):
       geom.condim = 4
-      geom.friction = [1.2, 0.02, 0.005]
+      geom.friction = list(gripper_friction)
       geom.solref = [0.005, 1.0]
       geom.solimp = [0.95, 0.99, 0.001, 0.5, 2.0]
 
@@ -280,6 +290,7 @@ def _add_red_cube(
     vis_def: mujoco._specs.MjsDefault,
     col_def: mujoco._specs.MjsDefault,
     pos: tuple[float, float, float],
+    friction: tuple[float, float, float] = (1.2, 0.02, 0.005),
 ) -> None:
   """Adds the movable red cube inside the arm's reachable workspace."""
   cube = spec.worldbody.add_body(name="red_cube", pos=list(pos))
@@ -299,7 +310,7 @@ def _add_red_cube(
       size=half,
       mass=0.035,
       condim=4,
-      friction=[1.2, 0.02, 0.005],
+      friction=list(friction),
       rgba=[0.90, 0.25, 0.20, 0.50],
   )
 
@@ -391,11 +402,41 @@ def _add_green_tray(
   )
 
 
+def _add_obstacle(
+    spec: mujoco.MjSpec,
+    vis_def: mujoco._specs.MjsDefault,
+    col_def: mujoco._specs.MjsDefault,
+    obstacle: dict[str, object],
+) -> None:
+  """Adds a static box obstacle on the tabletop for transit clearance checks."""
+  pos = [float(v) for v in obstacle["pos"]]
+  size = [float(v) for v in obstacle["size"]]
+  body = spec.worldbody.add_body(name="transit_obstacle", pos=pos)
+  body.add_geom(
+      name="transit_obstacle_visual",
+      default=vis_def,
+      type=mujoco.mjtGeom.mjGEOM_BOX,
+      size=size,
+      material="obstacle_material",
+  )
+  body.add_geom(
+      name="transit_obstacle_col",
+      default=col_def,
+      type=mujoco.mjtGeom.mjGEOM_BOX,
+      size=size,
+      mass=0.25,
+      rgba=[0.95, 0.55, 0.15, 0.50],
+  )
+
+
 def build_scene_spec(
     *,
     cube_pos: tuple[float, float, float] = RED_CUBE_POS,
     cylinder_pos: tuple[float, float, float] = BLUE_CYLINDER_POS,
     tray_pos: tuple[float, float, float] = GREEN_TRAY_POS,
+    cube_friction: tuple[float, float, float] = (1.2, 0.02, 0.005),
+    gripper_friction: tuple[float, float, float] = (1.2, 0.02, 0.005),
+    obstacle: dict[str, object] | None = None,
 ) -> mujoco.MjSpec:
   """Builds the complete SO-ARM101 tabletop pick-and-place MjSpec."""
   spec = mujoco.MjSpec()
@@ -413,8 +454,10 @@ def build_scene_spec(
   vis_def, col_def = _add_scene_defaults(spec)
   _add_environment_assets(spec)
   _add_table(spec, vis_def, col_def)
-  _attach_so101_robot(spec)
-  _add_red_cube(spec, vis_def, col_def, cube_pos)
+  _attach_so101_robot(spec, gripper_friction=gripper_friction)
+  _add_red_cube(spec, vis_def, col_def, cube_pos, friction=cube_friction)
   _add_blue_cylinder(spec, vis_def, col_def, cylinder_pos)
   _add_green_tray(spec, vis_def, col_def, tray_pos)
+  if obstacle is not None:
+    _add_obstacle(spec, vis_def, col_def, obstacle)
   return spec
