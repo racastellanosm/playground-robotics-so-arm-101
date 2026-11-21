@@ -1,0 +1,341 @@
+{
+  "summary": {
+    "seed": 42,
+    "total_cases": 13,
+    "passed_cases": 13,
+    "pass_rate": 1.0,
+    "task_success_count": 8,
+    "avg_sim_time_s": 5.654,
+    "avg_wall_time_s": 0.126,
+    "failure_breakdown": {
+      "grasp_slip": 2,
+      "obstacle_collision": 1,
+      "out_of_reach": 2
+    }
+  },
+  "cases": [
+    {
+      "scenario": "position_variation",
+      "case_id": "trial_1",
+      "passed": true,
+      "task_succeeded": true,
+      "sim_time_s": 6.999999999999451,
+      "wall_time_s": 0.1741723750019446,
+      "failure_reason": null,
+      "details": {
+        "cube_pos": [
+          0.2253,
+          -0.1159,
+          0.015
+        ],
+        "task_succeeded": true,
+        "sim_time_s": 6.999999999999451,
+        "failure_reason": null,
+        "obstacle_contacts": 0,
+        "slip_detected": false,
+        "drop_detected": false,
+        "retries": 0,
+        "cube_final_xyz": [
+          0.2555,
+          0.001,
+          0.019
+        ],
+        "cube_speed_mps": 0.0
+      }
+    },
+    {
+      "scenario": "position_variation",
+      "case_id": "trial_2",
+      "passed": true,
+      "task_succeeded": true,
+      "sim_time_s": 6.999999999999451,
+      "wall_time_s": 0.1170839159967727,
+      "failure_reason": null,
+      "details": {
+        "cube_pos": [
+          0.2308,
+          -0.1016,
+          0.015
+        ],
+        "task_succeeded": true,
+        "sim_time_s": 6.999999999999451,
+        "failure_reason": null,
+        "obstacle_contacts": 0,
+        "slip_detected": false,
+        "drop_detected": false,
+        "retries": 0,
+        "cube_final_xyz": [
+          0.2554,
+          0.0009,
+          0.019
+        ],
+        "cube_speed_mps": 0.0
+      }
+    },
+    {
+      "scenario": "position_variation",
+      "case_id": "trial_3",
+      "passed": true,
+      "task_succeeded": true,
+      "sim_time_s": 6.999999999999451,
+      "wall_time_s": 0.12641391600482166,
+      "failure_reason": null,
+      "details": {
+        "cube_pos": [
+          0.1811,
+          -0.0863,
+          0.015
+        ],
+        "task_succeeded": true,
+        "sim_time_s": 6.999999999999451,
+        "failure_reason": null,
+        "obstacle_contacts": 0,
+        "slip_detected": false,
+        "drop_detected": false,
+        "retries": 0,
+        "cube_final_xyz": [
+          0.2555,
+          0.0006,
+          0.019
+        ],
+        "cube_speed_mps": 0.0
+      }
+    },
+    {
+      "scenario": "position_variation",
+      "case_id": "trial_4",
+      "passed": true,
+      "task_succeeded": true,
+      "sim_time_s": 6.999999999999451,
+      "wall_time_s": 0.11944462500105146,
+      "failure_reason": null,
+      "details": {
+        "cube_pos": [
+          0.2245,
+          -0.0968,
+          0.015
+        ],
+        "task_succeeded": true,
+        "sim_time_s": 6.999999999999451,
+        "failure_reason": null,
+        "obstacle_contacts": 0,
+        "slip_detected": false,
+        "drop_detected": false,
+        "retries": 0,
+        "cube_final_xyz": [
+          0.2558,
+          0.0005,
+          0.019
+        ],
+        "cube_speed_mps": 0.0
+      }
+    },
+    {
+      "scenario": "position_variation",
+      "case_id": "trial_5",
+      "passed": true,
+      "task_succeeded": true,
+      "sim_time_s": 6.999999999999451,
+      "wall_time_s": 0.1117952500062529,
+      "failure_reason": null,
+      "details": {
+        "cube_pos": [
+          0.1833,
+          -0.1152,
+          0.015
+        ],
+        "task_succeeded": true,
+        "sim_time_s": 6.999999999999451,
+        "failure_reason": null,
+        "obstacle_contacts": 0,
+        "slip_detected": false,
+        "drop_detected": false,
+        "retries": 0,
+        "cube_final_xyz": [
+          0.2554,
+          0.0009,
+          0.019
+        ],
+        "cube_speed_mps": 0.0
+      }
+    },
+    {
+      "scenario": "grip_friction_and_closure",
+      "case_id": "nominal_grip",
+      "passed": true,
+      "task_succeeded": true,
+      "sim_time_s": 6.999999999999451,
+      "wall_time_s": 0.11512929099990288,
+      "failure_reason": null,
+      "details": {
+        "task_succeeded": true,
+        "sim_time_s": 6.999999999999451,
+        "failure_reason": null,
+        "obstacle_contacts": 0,
+        "slip_detected": false,
+        "drop_detected": false,
+        "retries": 0,
+        "cube_final_xyz": [
+          0.2554,
+          0.0009,
+          0.019
+        ],
+        "cube_speed_mps": 0.0
+      }
+    },
+    {
+      "scenario": "grip_friction_and_closure",
+      "case_id": "low_friction_slip",
+      "passed": true,
+      "task_succeeded": false,
+      "sim_time_s": 3.09999999999988,
+      "wall_time_s": 0.07104466699820478,
+      "failure_reason": "grasp_slip",
+      "details": {
+        "task_succeeded": false,
+        "sim_time_s": 3.09999999999988,
+        "failure_reason": "grasp_slip",
+        "obstacle_contacts": 0,
+        "slip_detected": true,
+        "drop_detected": false,
+        "retries": 0,
+        "cube_final_xyz": [
+          0.1959,
+          -0.1109,
+          0.015
+        ],
+        "cube_speed_mps": 0.0
+      }
+    },
+    {
+      "scenario": "grip_friction_and_closure",
+      "case_id": "underclosed_gripper_slip",
+      "passed": true,
+      "task_succeeded": false,
+      "sim_time_s": 3.09999999999988,
+      "wall_time_s": 0.06016424999688752,
+      "failure_reason": "grasp_slip",
+      "details": {
+        "task_succeeded": false,
+        "sim_time_s": 3.09999999999988,
+        "failure_reason": "grasp_slip",
+        "obstacle_contacts": 0,
+        "slip_detected": true,
+        "drop_detected": false,
+        "retries": 0,
+        "cube_final_xyz": [
+          0.2,
+          -0.11,
+          0.015
+        ],
+        "cube_speed_mps": 0.0
+      }
+    },
+    {
+      "scenario": "obstacle_avoidance",
+      "case_id": "obstacle_safe_transit",
+      "passed": true,
+      "task_succeeded": true,
+      "sim_time_s": 6.999999999999451,
+      "wall_time_s": 0.22935287499421975,
+      "failure_reason": null,
+      "details": {
+        "task_succeeded": true,
+        "sim_time_s": 6.999999999999451,
+        "failure_reason": null,
+        "obstacle_contacts": 0,
+        "slip_detected": false,
+        "drop_detected": false,
+        "retries": 0,
+        "cube_final_xyz": [
+          0.2552,
+          0.0009,
+          0.019
+        ],
+        "cube_speed_mps": 0.0
+      }
+    },
+    {
+      "scenario": "obstacle_avoidance",
+      "case_id": "obstacle_low_transit_check",
+      "passed": true,
+      "task_succeeded": false,
+      "sim_time_s": 6.999999999999451,
+      "wall_time_s": 0.15487874999962514,
+      "failure_reason": "obstacle_collision",
+      "details": {
+        "task_succeeded": false,
+        "sim_time_s": 6.999999999999451,
+        "failure_reason": "obstacle_collision",
+        "obstacle_contacts": 1124,
+        "slip_detected": false,
+        "drop_detected": false,
+        "retries": 0,
+        "cube_final_xyz": [
+          0.2212,
+          -0.114,
+          0.015
+        ],
+        "cube_speed_mps": 0.0
+      }
+    },
+    {
+      "scenario": "out_of_reach_target",
+      "case_id": "far_target",
+      "passed": true,
+      "task_succeeded": false,
+      "sim_time_s": 0.0,
+      "wall_time_s": 0.09084516599978087,
+      "failure_reason": "out_of_reach",
+      "details": {
+        "target": [
+          0.55,
+          0.0,
+          0.015
+        ],
+        "error": "solve_site_ik failed for [0.55, 0.0, 0.015]: pos_err=0.1162 m, ori_err=0.8204 rad"
+      }
+    },
+    {
+      "scenario": "out_of_reach_target",
+      "case_id": "behind_base_target",
+      "passed": true,
+      "task_succeeded": false,
+      "sim_time_s": 0.0,
+      "wall_time_s": 0.08518070800346322,
+      "failure_reason": "out_of_reach",
+      "details": {
+        "target": [
+          -0.3,
+          0.0,
+          0.015
+        ],
+        "error": "solve_site_ik failed for [-0.3, 0.0, 0.015]: pos_err=0.3065 m, ori_err=0.1893 rad"
+      }
+    },
+    {
+      "scenario": "mid_transit_drop_and_retry",
+      "case_id": "drop_recovery",
+      "passed": true,
+      "task_succeeded": true,
+      "sim_time_s": 11.300000000000443,
+      "wall_time_s": 0.177813457994489,
+      "failure_reason": null,
+      "details": {
+        "task_succeeded": true,
+        "sim_time_s": 11.300000000000443,
+        "failure_reason": null,
+        "obstacle_contacts": 0,
+        "slip_detected": false,
+        "drop_detected": true,
+        "retries": 1,
+        "cube_final_xyz": [
+          0.2553,
+          0.0003,
+          0.019
+        ],
+        "cube_speed_mps": 0.0
+      }
+    }
+  ]
+}
